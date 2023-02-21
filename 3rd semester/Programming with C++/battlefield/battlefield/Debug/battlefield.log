@@ -1,0 +1,5 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(499,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
+  main.cpp
+MSVCRTD.lib(exe_main.obj) : error LNK2019: unresolved external symbol _main referenced in function "int __cdecl invoke_main(void)" (?invoke_main@@YAHXZ)
+C:\Users\User\Desktop\cpros\battlefield\3rdparty\lib\sggd.lib : warning LNK4272: library machine type 'x64' conflicts with target machine type 'x86'
+C:\Users\User\Desktop\cpros\battlefield\bin\battlefieldd.exe : fatal error LNK1120: 1 unresolved externals

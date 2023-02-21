@@ -1,0 +1,83 @@
+MENU:
+
+#η κλάση list
+public class LinkedList{
+	private Node s1=null; //head of list
+
+	static class Node{
+		int data;
+		Node next=null;
+
+		Node(int d){
+			data=d;
+		}
+	}
+}
+
+import java.util.*;
+
+//Επειδή στην java δεν έχουμε χρήση pointers, κάθε φορά ο pointer θα είναι το node.next
+public static void main(String[] args){
+	int s0=0; //nodes counter
+	//int s1=head;
+	Scanner sc= new Scanner(System.in);
+	while(true){
+		System.out.println(\n\Menu:\n1. Insert an integer \n2. Remove an integer\n3. Print list (ascending order)\n4. Exit\n\n>>);
+		int s2=sc.nextInt();
+		if(s2==1) 
+			insert();
+		else if(s2==2)
+			remove();
+		else if(s2==3)
+			ascending();
+		else
+			exit();
+	}
+
+}
+
+
+
+
+
+
+
+insert
+
+
+public static void LinkedList insert()
+    {
+    	//δεν χρειαζεται να γίνει allocate λόγω της java
+        int data =  sc.NextInt();
+
+        Node new_node = new Node(data);
+        new_node.next = null;
+   		
+   		Node current;
+       
+        if (s0==0) {
+            List.s1 = new_node;
+            s0++;
+        }
+
+        while(true){
+        	if(head==null){
+        		new_node.next = head;
+            	head = new_node;
+            	s0++;
+        	}
+        	if(current.next.data < new_node.data){
+        		current=current.next;
+        		s0++;
+        	}
+
+        	new_node.next = current.next;
+            current.next = new_node;
+
+        }
+   
+   
+    }
+
+
+

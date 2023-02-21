@@ -1,0 +1,85 @@
+#	Computer Systems Organization
+#	Winter Semester 2021-2022
+#	1st Assignment
+#
+# 	Pseudocode by MARIA TOGANTZH (mst@aueb.gr)
+#
+# 	MIPS Code by ΜΑΡΙΑ ΚΟΝΤΑΡΑΤΟΥ(p3200078@aueb.gr/3200078) 
+# 	(Please note your name, e-mail and student id number)
+
+
+	.text
+	.globl main	
+
+# ------------------- Read and Validate Data ------------------------------
+
+main:	  		 		# counter = 4
+						#
+loop: 		 			# while counter != 0 do
+						#
+						#	Read hex character in $v0
+						# 		
+						# 	if charakter is not ('0'..'9') and is not ('A'..'F') then
+						# 			goto exit_on_error
+						# 		else 	
+						# 			goto isHex
+						#		
+						#
+isHex:					# 	shift left $t1
+						# 	pack $v0 to $t1 
+						# 	counter = counter - 1
+						#
+						# goto loop
+		
+# ------------------- Calculate Decimal Number -----------------------------		
+
+exit_loop:					# print '\n'
+						#
+						# result = 0
+						#
+						# counter = 4
+						# 
+						# power = 1
+						# 
+						# $s1 = 255 (mask = 11111111)
+						#
+loop2:					# while counter != 0 do
+						# 	
+						# 	$t2 =  least significant byte from $t1 (unpack)
+						# 	shift right $t1 
+						# 	if $t2 is letter A..F then 
+						# 		$t2 = $t2 - 55
+						# 	else 
+						#		$t2 = $t2 - 48
+						#
+						# 	$t2 = $t2 * power
+						# 	power = power * 16
+						# 	counter = counter - 1
+						# 	result = result + $t2
+						#
+						# goto loop2
+
+# ------------------- Print Results ------------------------------------		
+
+exit_loop2:				# print result
+						#
+						# goto exit
+						#
+exit_on_error:			#
+						# 
+						# print '\n'
+						#
+						# print error message
+						#
+						#
+						#
+exit:					# 
+						# print '\n'
+						#
+						#			
+						# exit
+						#
+
+	.data
+	
+error: .asciiz "Wrong Hex Number ..." 
